@@ -90,7 +90,7 @@ class KhoChuaNhac {
 
         let table = document.createElement('table')
 
-        table.innerHTML = '<tr><td>STT</td><td>Name</td><td>Edit</td><td>Delete</td></tr>'
+        table.innerHTML = '<tr style="background-color: cadetblue"><td>STT</td><td>Name</td><td>Edit</td><td>Delete</td></tr>'
 
         this.categoryList.forEach((category, i) => {
             let tr = document.createElement('tr')
@@ -141,7 +141,7 @@ class KhoChuaNhac {
 
         let table = document.createElement('table')
 
-        table.innerHTML = '<tr><td>ID</td><td>Name</td><td>Category</td>'
+        table.innerHTML = '<tr style="background-color: lightgreen"><td>ID</td><td>Name</td><td>Thể Loại</td><td>Lyrics</td>'
 
         this.songList.forEach((song, i) => {
             let tr = document.createElement('tr')
@@ -157,6 +157,13 @@ class KhoChuaNhac {
             tdCate.append(song.category)
             tr.append(tdCate)
             table.append(tr)
+
+            let tdLyrics = document.createElement('td')
+            tdLyrics.append(song.lyrics)
+            tr.append(tdLyrics)
+            table.append(tr)
+
+
         })
 
         div.append(table)
@@ -183,6 +190,3 @@ document.querySelector('#createSong').onclick = () => {
     let lyrics = document.querySelector('#lyrics').value
     khoChua.addSong(name, lyrics)
 }
-
-
-
